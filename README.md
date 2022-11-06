@@ -1,10 +1,6 @@
 ![](https://img.shields.io/badge/fmanimashaun-green)
-![](https://img.shields.io/badge/EngruugbeJimmy-blue)
-![](https://img.shields.io/badge/Oscah01-violet)
 
-
-
-# Awesome books: with ES6
+# Awesome books: with ES600
 
 ## Overview
 
@@ -63,11 +59,11 @@ To get a local copy up and running follow these simple example steps.
 
 ### Setup
 
-- Open your GitHub account the repository's [link](https://github.com/fmanimashaun/Awesome-book)
+- Open your GitHub account the repository's [link](https://github.com/fmanimashaun/Awesome-book_es6)
 
 ### Install
 
-- copy the repo's link and clone it by writing `git clone https://github.com/fmanimashaun/Awesome-book.git` on your git bash terminal.
+- copy the repo's link and clone it by writing `git clone https://github.com/fmanimashaun/Awesome-book_es6.git` on your git bash terminal.
 - `npm install` to install the dependencies
 
 ### Run tests
