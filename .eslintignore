@@ -1,6 +1,2 @@
-{
-    "ignorePatterns": ["js/modules/luxon.js"],
-    "rules": {
-        //...
-    }
-}
+# ignore the luxon file
+js/modules/luxon.js"],
