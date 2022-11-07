@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/fmanimashaun-green)
 
-# Awesome books: with ES600
+# Awesome books: with ES6
 
 ## Overview
 
