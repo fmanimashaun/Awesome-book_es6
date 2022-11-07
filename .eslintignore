@@ -1,0 +1,6 @@
+{
+    "ignorePatterns": ["js/modules/luxon.js"],
+    "rules": {
+        //...
+    }
+}
