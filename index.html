@@ -45,13 +45,12 @@
         <h2 class="add__book-title">Add a new book</h2>
 
         <form class="add__book-form">
-
           <label for="title">
-            <input type="text" name="title" id="title" placeholder="Title">
+            <input type="text" minlength='3' name="title" id="title" placeholder="Title" required>
           </label>
 
           <label for="author">
-            <input type="text" name="author" id="author" placeholder="Author">
+            <input type="text" minlength='3' name="author" id="author" placeholder="Author" required>
           </label>
 
           <input type="submit" value="Add">

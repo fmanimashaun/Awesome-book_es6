@@ -9,7 +9,7 @@ export const timeNow = () => {
   const yearNow = dateTime.toFormat('yyyy');
   const monthNow = dateTime.toFormat('MMMM');
   const dayNow = parseInt(dateTime.toFormat('d'), 10);
-  const timeNow = dateTime.toFormat('h:m:sa');
+  const timeNow = dateTime.toFormat('h:m:s a');
 
   // Append suffix to day
   if (dayNow > 3 && dayNow < 21) {
