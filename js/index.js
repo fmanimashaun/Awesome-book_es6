@@ -1,6 +1,7 @@
-import { DateTime } from 'js/modules/luxon/luxon.js';
+// import { DateTime } from './modules/luxon/luxon.js';
 import BookListing from './modules/bookList.js';
 import Book from './modules/book.js';
+import { timeNow } from './modules/datetime.js';
 
 // js to access html elements
 const navBar = document.querySelector('.header__nav-list');
@@ -9,44 +10,9 @@ const addNewBookForm = document.querySelector('.add__book-form');
 const listDiv = document.querySelector('.book__collection');
 const formDiv = document.querySelector('.add__book');
 const contactDiv = document.querySelector('.contact');
-const dateDisplay = document.querySelector('.header__date');
 
-// create a date-time function
-const CurrentDateTime = () => {
-  const dateObject = new Date();
-  const year = dateObject.getFullYear();
-  const month = dateObject.toLocaleString('default', { month: 'long' });
-  const day = dateObject.getDay();
-  const hour = dateObject.getHours();
-  const min = dateObject.getMinutes();
-  const sec = dateObject.getSeconds();
-
-  let date = '';
-  let time = '';
-
-  // create the time string
-  if (hour >= 12) {
-    time += `${hour - 12}:${min}:${sec} pm`;
-  } else {
-    time += `${hour}:${min}:${sec} am`;
-  }
-
-  // create the date string
-  if (day === 1 || day === 21 || day === 31) {
-    date += `${month} ${day}st ${year}`;
-  } else if (day === 2 || day === 22) {
-    date += `${month} ${day}nd ${year}`;
-  } else if (day === 3 || day === 23) {
-    date += `${month} ${day}rd ${year}`;
-  } else {
-    date += `${month} ${day}th ${year}`;
-  }
-
-  dateDisplay.innerHTML = `${date}, ${time}`;
-};
-
-// calling tthe time function every one second
-setInterval(CurrentDateTime, 1000);
+// calling the date-time function every one second
+setInterval(timeNow, 1000);
 
 // create an instance of a book listing
 const bookList = new BookListing();
