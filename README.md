@@ -1,32 +1,27 @@
 ![](https://img.shields.io/badge/fmanimashaun-green)
 
-# Awesome books: with ES600
+# Awesome books: with ES6
 
 ## Overview
 
-In this project, you will restructure your [Awesome books app code](https://github.com/fmanimashaun/Awesome-book). The goal is to make it more organized by using modules while practising the use of ES6 syntax in the project
+In this project, the [Awesome books app code](https://github.com/fmanimashaun/Awesome-book) was refactored. The goal was to make it more organized by using modules while practising the use of ES6 syntax in the project
+## Project Objectives
 
-## Project Tasks List (Work-in-progress)
-
-- [ ] Re-create the [Awesome books app](https://github.com/fmanimashaun/Awesome-book) following the rules:
-
-  - [ ] Use ES6 syntax.
-  - [ ] Divide your code into modules. Save each module in a separate file in the modules dir. Import modules in the index.js file. For this exercise - the more modules the better!
-  - [ ] Keep all funcionalities of the app without errors.
-  - [ ] Refactor your methods and functions to arrow functions.
-  - [ ] Use let and const in a correct way.
-
-- [ ] Display the current date below the navigation bar.
-
-  - [ ]  For this requirement we use a library [Luxon](https://moment.github.io/luxon/#/install?id=es6)
-  - [ ]  Download the script and save it to your project.
-  - [ ]  Import it as a module.
+- [x] Re-create the [Awesome books app](https://github.com/fmanimashaun/Awesome-book) following the rules:
+  - [x] Use ES6 syntax.
+  - [x] Divide code into modules. the following modules were created:
+    - [x] *BookList.js:* for BookList class
+    - [x] *book.js:* for the book class
+    - [x] *datetime.js:* for the time function
+    - [x] luxon: the downloaded luxon library
+- [x] Display the current date below the navigation bar.
+  - [x]  For this requirement we use a library [Luxon](https://moment.github.io/luxon/#/install?id=es6)
 
 __See the article [Get the current date and time](https://moment.github.io/luxon/#/tour?id=get-the-current-date-and-time).__
 
 ## DEMO LINK
 
-> [Live Demo Link](https://fmanimashaun.github.io/Awesome-book/)
+> [Live Demo Link](https://fmanimashaun.github.io/Awesome-book_es6/)
 
 ## Screenshots
 

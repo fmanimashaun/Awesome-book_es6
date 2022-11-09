@@ -26,7 +26,7 @@
           </ul>
         </nav>
       </div>
-      <span class="header__date">March 19th 2021, 9:25:32 am</span>
+      <span class="header__date"></span>
     </header>
 
     <!-- ***********************  PAGE MAIN *********************** -->
@@ -45,13 +45,12 @@
         <h2 class="add__book-title">Add a new book</h2>
 
         <form class="add__book-form">
-
           <label for="title">
-            <input type="text" name="title" id="title" placeholder="Title">
+            <input type="text" minlength='3' name="title" id="title" placeholder="Title" required>
           </label>
 
           <label for="author">
-            <input type="text" name="author" id="author" placeholder="Author">
+            <input type="text" minlength='3' name="author" id="author" placeholder="Author" required>
           </label>
 
           <input type="submit" value="Add">
@@ -81,8 +80,8 @@
       <p class="footer__note">Copyright</p>
     </footer>
   </div>
-  <script type="module" src="js/modules/luxon.js"></script>
-  <script src="js/index.js"></script>
+
+  <script type="module" src="js/index.js"></script>
 </body>
 
 </html>
