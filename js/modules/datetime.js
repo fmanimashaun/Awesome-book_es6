@@ -2,7 +2,7 @@
 import { DateTime } from './luxon/luxon.js';
 
 // // create a date-time function
-export const timeNow = () => {
+const timeNow = () => {
   // js to access html elements
   const dateDisplay = document.querySelector('.header__date');
   const dateTime = DateTime.now();
@@ -38,3 +38,5 @@ export const timeNow = () => {
     }
   }
 };
+
+export default timeNow;
