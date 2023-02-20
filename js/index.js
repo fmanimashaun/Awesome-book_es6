@@ -1,100 +1,83 @@
-import BookListing from './modules/bookList.js';
-import Book from './modules/book.js';
-import { timeNow } from './modules/datetime.js';
+import { timeNow } from './modules/datatime.js';
+import Books from './modules/booksList.js';
+import showAndRemoveSuccessMessage from './modules/showAndRemoveSuccessMessage.js';
+import displayContactPage from './modules/displayContactPage.js';
+import displayAddBookPage from './modules/displayAddBookPage.js';
+import displayBookListPage from './modules/displayBookListPage.js';
 
-// js to access html elements
-const navBar = document.querySelector('.header__nav-list');
-const navListItem = navBar.querySelectorAll('.header__nav-item');
-const addNewBookForm = document.querySelector('.add__book-form');
-const listDiv = document.querySelector('.book__collection');
-const formDiv = document.querySelector('.add__book');
-const contactDiv = document.querySelector('.contact');
+// render  books on the page when page loads
+window.addEventListener('DOMContentLoaded', () => {
+  // calling the date-time function every one second
+  setInterval(timeNow, 1000);
 
-// calling the date-time function every one second
-setInterval(timeNow, 1000);
+  // create a new instance of the Books class
+  const books = new Books();
 
-// create an instance of a book listing
-const bookList = new BookListing();
-
-// add event listener to form
-addNewBookForm.addEventListener('submit', (event) => {
-  event.preventDefault();
-
-  // create an instance of a book from book class
-  const newbook = new Book();
-  bookList.addToList(newbook);
-  addNewBookForm.reset();
+  // call the renderBooks method from books class when the page loads
+  books.renderBooks();
 });
 
-// Add event listener to window reload
-window.addEventListener('load', () => {
-  // load page content
-  bookList.displayList();
-});
+// add event listener to the page
+document.addEventListener('click', (e) => {
+  if (e.target.classList.contains('header__nav-item')) {
+    // Get DOM elements
+    const navItems = document.querySelectorAll('.header__nav-item');
 
-// Add an event listener to the navbar
-navBar.addEventListener('click', (event) => {
-  if ((event.target.matches('li'))
-    && (event.target.innerHTML === 'Add new')) { // checking if the clicked tab is the "add new" tab
-    navListItem.forEach((item) => {
-      if (item.classList.contains('active')) {
-        item.classList.remove('active');
-      }
+    // remove the active class from all nav items
+    navItems.forEach((item) => {
+      item.classList.remove('active');
     });
 
-    // adding active class to the clicked tab
-    event.target.classList.add('active');
+    // add the active class to the clicked nav item
+    e.target.classList.add('active');
 
-    // Remove the hidden class from the active section and add it to others
-    formDiv.classList.remove('hidden');
-    if (!(listDiv.classList.contains('hidden')) && !(contactDiv.classList.contains('hidden'))) {
-      listDiv.classList.add('hidden');
-      contactDiv.classList.add('hidden');
-    } else if (!(listDiv.classList.contains('hidden')) && (contactDiv.classList.contains('hidden'))) {
-      listDiv.classList.add('hidden');
-    } else if ((listDiv.classList.contains('hidden')) && !(contactDiv.classList.contains('hidden'))) {
-      contactDiv.classList.add('hidden');
+    // check which nav item was clicked
+    if (e.target.dataset.nav === 'add') {
+      displayAddBookPage();
+    } else if (e.target.dataset.nav === 'contact') {
+      displayContactPage();
+    } else {
+      displayBookListPage();
+
+      // create a new instance of the Books class
+      const books = new Books();
+
+      // call the renderBooks method from books class when the page loads
+      books.renderBooks();
     }
-  } else if ((event.target.matches('li'))
-    && (event.target.innerHTML === 'Contact')) { // checking if the clicked tab is the "Contact" tab
-    navListItem.forEach((item) => {
-      if (item.classList.contains('active')) {
-        item.classList.remove('active');
-      }
-    });
+  } else if (e.target.dataset.input === 'submit') {
+    // Get DOM elements
+    const form = document.querySelector('.books__addbook-form');
 
-    // adding active class to the clicked tab
-    event.target.classList.add('active');
+    // check form validity
+    if (form.checkValidity()) {
+      // prevent the default behaviour
+      e.preventDefault();
 
-    // Remove the hidden class from the active section and add it to others
-    contactDiv.classList.remove('hidden');
-    if (!(listDiv.classList.contains('hidden')) && !(formDiv.classList.contains('hidden'))) {
-      listDiv.classList.add('hidden');
-      formDiv.classList.add('hidden');
-    } else if (!(listDiv.classList.contains('hidden')) && (formDiv.classList.contains('hidden'))) {
-      listDiv.classList.add('hidden');
-    } else if ((listDiv.classList.contains('hidden')) && !(formDiv.classList.contains('hidden'))) {
-      formDiv.classList.add('hidden');
+      // get the values from the form
+      const formData = new FormData(form);
+      const title = formData.get('title');
+      const author = formData.get('author');
+      const id = Math.random().toString(36).substring(2, 9);
+
+      const newBook = { id, title, author };
+
+      // create a new instance of the Books class
+      const books = new Books();
+
+      // call the addBook function
+      books.addBook(newBook);
+
+      // clear form
+      form.reset();
     }
-  } else { // checking if the clicked tab is the "List" tab
-    navListItem.forEach((item) => {
-      if (item.classList.contains('active')) {
-        item.classList.remove('active');
-      }
-    });
+    // show success message
+    showAndRemoveSuccessMessage(form);
+  } else if (e.target.dataset.id) {
+    // create a new instance of the Books class
+    const books = new Books();
 
-    // adding active class to the clicked tab
-    event.target.classList.add('active');
-
-    // Remove the hidden class from the active section and add it to others
-    listDiv.classList.remove('hidden');
-    if (!(formDiv.classList.contains('hidden')) && !(contactDiv.classList.contains('hidden'))) {
-      contactDiv.classList.add('hidden');
-      formDiv.classList.add('hidden');
-    } else if (!(formDiv.classList.contains('hidden')) && (contactDiv.classList.contains('hidden'))) {
-      formDiv.classList.add('hidden');
-    } else if ((formDiv.classList.contains('hidden')) && !(contactDiv.classList.contains('hidden'))) {
-      contactDiv.classList.add('hidden');
-    }
+    // call the removeBook function
+    books.removeBook(e.target.dataset.id);
   }
 });
