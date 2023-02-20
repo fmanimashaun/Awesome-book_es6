@@ -2,16 +2,39 @@
 
 # Awesome books: with ES6
 
-## Overview
+## 📗 Table of Contents
 
-In this project, the [Awesome books app code](https://github.com/fmanimashaun/Awesome-book) was refactored. The goal was to make it more organized by using modules while practising the use of ES6 syntax in the project
-## Project Objectives
+- [📖 Overview](#about-project)
+  - [Project Objectives](#project-objectives)
+  - [🛠 Built With](#built-with)
+    - [Tech Stack](#tech-stack)
+    - [Key Features](#key-features)
+  - [🚀 Live Demo](#live-demo)
+    - [Screenshots](#screenshots)
+- [💻 Getting Started](#getting-started)
+  - [Setup](#setup)
+  - [Prerequisites](#prerequisites)
+  - [Install](#install)
+  - [Run tests](#run-tests)
+  - [Deployment](#deployment)
+- [👥 Authors](#authors)
+- [🔭 Future Features](#future-features)
+- [🤝 Contributing](#contributing)
+- [⭐️ Show your support](#support)
+- [🙏 Acknowledgements](#acknowledgements)
+- [📝 License](#license)
 
-- [x] Re-create the [Awesome books app](https://github.com/fmanimashaun/Awesome-book) following the rules:
+
+## 📖 Overview <a name="about-project"></a>
+
+In this project, we built a basic website that allows users to add/remove books from a list. This was achieved by using JavaScript objects and arrays while using javascript DOM and basic events to dynamically modify the page.
+
+### Project Objectives <a name="project-objectives"></a>
+
+- [x] Re-create the [Awesome books app](https://github.com/yosaddis/Awesome-books) following the rules:
   - [x] Use ES6 syntax.
   - [x] Divide code into modules. the following modules were created:
     - [x] *BookList.js:* for BookList class
-    - [x] *book.js:* for the book class
     - [x] *datetime.js:* for the time function
     - [x] luxon: the downloaded luxon library
 - [x] Display the current date below the navigation bar.
@@ -19,11 +42,25 @@ In this project, the [Awesome books app code](https://github.com/fmanimashaun/Aw
 
 __See the article [Get the current date and time](https://moment.github.io/luxon/#/tour?id=get-the-current-date-and-time).__
 
-## DEMO LINK
+## Built With
 
-> [Live Demo Link](https://fmanimashaun.github.io/Awesome-book_es6/)
+- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
+- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
+- [Luxon](https://moment.github.io/luxon/#/install?id=es6)
+- [ES6](https://www.w3schools.com/js/js_es6.asp)
 
-## Screenshots
+### Key Features <a name="key-features"></a>
+
+- [x] Preserving data with localStorage
+- [x] Using ES6 syntax
+- [x] Using modules
+
+## 🚀 Live Demo <a name="live-demo"></a>
+
+> [Live Demo Link](https://fmanimashaun.github.io/Awesome-book_es6)
+
+### Screenshots <a name="screenshots"></a>
 
 <h3 align="center">Screenhot</h3>
 <p align="center">
@@ -32,14 +69,8 @@ __See the article [Get the current date and time](https://moment.github.io/luxon
   <img width="200" src="screenshots/Contact.png">
 </P>
 
-## Built With
 
-- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
-- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
-
-
-## Getting Started
+## 💻 Getting Started <a name="getting-started"></a>
 
 - [Optional] Install git bash to your machine to enable you to clone this repo.
 - install Visual Studio to be able to host a local live version.
@@ -47,29 +78,30 @@ __See the article [Get the current date and time](https://moment.github.io/luxon
 
 To get a local copy up and running follow these simple example steps.
 
-### Prerequisites
+### Setup <a name="setup"></a>
+
+- Open your GitHub account the repository's [link](https://github.com/fmanimashaun/Awesome-book_es6)
+
+### Prerequisites <a name="prerequisites"></a>
 
 - Internet connection
 - A github account
 
-### Setup
+### Install <a name="install"></a>
 
-- Open your GitHub account the repository's [link](https://github.com/fmanimashaun/Awesome-book_es6)
-
-### Install
-
-- copy the repo's link and clone it by writing `git clone https://github.com/fmanimashaun/Awesome-book_es6.git` on your git bash terminal.
+- copy the repo's link and clone it by writing `git clone https://github.com/fmanimashaun/AAwesome-book_es6.git` on your git bash terminal.
 - `npm install` to install the dependencies
 
-### Run tests
+### Run tests <a name="run-tests"></a>
 
 - You can check for errors by running linter tests found in the github flows.
 
-### Deployment
+### Deployment <a name="deployment"></a>
 
 - Click on 'go live' on your visual studio to view the project live on your local machine.
 
-## Authors
+
+## Authors <a name="authors"></a>
 
 👤 **Engr. Animashaun Fisayo**
 
@@ -78,16 +110,16 @@ To get a local copy up and running follow these simple example steps.
 - [LinkedIn](https://www.linkedin.com/in/fmanimashaun/)
 - [Website](https://fmanimashaun.com)
 
-## 🤝 Contributing
+# 🤝 Contributing <a name="contributing"></a>
 
 Contributions, issues, and feature requests are welcome!
 
 Feel free to check the [issues page](../../issues/).
 
-## Show your support
+## ⭐️ Show your suppor <a name="support"></a>
 
 Give a ⭐️ if you like this project!
 
-## 📝 License
+## 📝 License <a name="license"></a>
 
 This project is [MIT](./LICENSE) licensed.
