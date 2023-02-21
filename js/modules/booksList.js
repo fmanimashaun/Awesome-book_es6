@@ -1,13 +1,12 @@
 class Books {
   constructor() {
-    // eslint-disable-next-line no-unused-expressions
-    this.list;
+    this.list = [];
   }
 
   // get books from local storage
   // eslint-disable-next-line class-methods-use-this
-  get list() {
-    return localStorage.getItem('books') ? JSON.parse(localStorage.getItem('books')) : [];
+  getList() {
+    return localStorage.getItem('books') ? JSON.parse(localStorage.getItem('books')) : this.list;
   }
 
   // render books
@@ -16,7 +15,7 @@ class Books {
     const bookList = document.querySelector('.books__list');
 
     // get the books from the books array from localStorage
-    const booksCollection = this.list;
+    const booksCollection = this.getList();
 
     // check the length of the books array
     if (booksCollection.length === 0) {
@@ -47,7 +46,7 @@ class Books {
   // eslint-disable-next-line class-methods-use-this
   addBook(book) {
     // get the books from the books array from localStorage
-    const booksCollection = localStorage.getItem('books') ? JSON.parse(localStorage.getItem('books')) : [];
+    const booksCollection = this.getList();
     booksCollection.push(book);
 
     // update the books array in localStorage
@@ -57,7 +56,7 @@ class Books {
   // remove a book function
   removeBook(id) {
     // get the books from the books array from localStorage
-    const booksCollection = JSON.parse(localStorage.getItem('books'));
+    const booksCollection = this.getList();
     const updatedBooksCollection = booksCollection.filter((book) => book.id !== id);
 
     // update the books array in localStorage
